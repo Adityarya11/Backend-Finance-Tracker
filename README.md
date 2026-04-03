@@ -189,6 +189,25 @@ Examples of enforced rules:
 
 ---
 
+## Testing (Phase 1)
+
+Run API tests:
+
+```bash
+python -m pytest -q
+```
+
+Current automated coverage includes:
+
+- Authentication success/failure (`/auth/login`, `/auth/token`)
+- Unauthorized access handling (`401`)
+- Role-based access control (`403` for non-admin on admin routes)
+- Transaction create/read/update/delete behavior and filtering
+- Summary scoping (admin global view vs user-scoped view)
+- Input/date validation paths (`422`, `400`)
+
+---
+
 ## Environment Variables
 
 | Variable                      | Default                  | Description               |
